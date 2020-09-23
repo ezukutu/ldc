@@ -3,14 +3,13 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_OPTIONS='--inspect' next",
-    "build": "next build",
-    "start": "next start",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && npm install && npm run dev",
-    "deploy": "NODE_ENV=production next build && next export -o docs && git checkout -- docs/.nojekyll && git add docs && git commit -m \"chore: regen site\""
-  },
+"scripts": {
+  "dev": "node server.js",
+  "build": "next build",
+  "start": "next start",
+  "deploy": "NODE_ENV=production next build && NODE_ENV=production node ./server.js"
+},
+
   "repository": {
     "type": "git",
     "url": ""
